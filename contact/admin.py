@@ -19,7 +19,7 @@ class CustomAddmin(admin.ModelAdmin):
         self.message_user(request,'la selection a été effectué avec succes')
     desactivate.short_description = "permet de desactiver le champs selectionner"
 
-class Contact(CustomAddmin):
+class ContactAdmin(CustomAddmin):
     list_display = ('nom','email','sujet','date_add','date_update','status')   
     search_fields = ('nom',)    
     ordering = ['nom']    
@@ -28,7 +28,7 @@ class Contact(CustomAddmin):
                   ("standard",{"fields":["status"]})
     ]
 
-class Newsletter(CustomAddmin):
+class NewsletterAdmin(CustomAddmin):
     list_display = ('email','date_add','date_update','status')   
     search_fields = ('email',)    
     ordering = ['email']    
@@ -36,3 +36,9 @@ class Newsletter(CustomAddmin):
                   ("info newsletter",{"fields":["email"]}),
                   ("standard",{"fields":["status"]})
     ]
+
+def _register(model,admin_class):
+    admin.site.register(model,admin_class)
+
+_register(models.Contact,ContactAdmin)
+_register(models.Newsletter,NewsletterAdmin)

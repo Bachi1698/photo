@@ -36,7 +36,7 @@
                 </div>
                 <div class="col-6 col-lg-4 col-md-6 col-sm-6 logo-wrapper">
                     <a href="index.html" class="logo">
-                        <img src="/static/img/logo.png" alt="">
+                        <img src="{{site_info.logo.url}}" alt="">
                     </a>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 search-trigger">
@@ -103,26 +103,15 @@
 
 
     <section class="instagram">
+        
         <div class="row no-gutters">
+            {%for g in gallerie%}
             <div class="col-2">
-                <a href=""><img src="/static/img/instagram/1.jpg" alt=""></a>
+                <a href=""><img src="{{g.photo.url}}" alt=""></a>
             </div>
-            <div class="col-2">
-                <a href=""><img src="/static/img/instagram/2.jpg" alt=""></a>
-            </div>
-            <div class="col-2">
-                <a href=""><img src="/static/img/instagram/3.jpg" alt=""></a>
-            </div>
-            <div class="col-2">
-                <a href=""><img src="/static/img/instagram/4.jpg" alt=""></a>
-            </div>
-            <div class="col-2">
-                <a href=""><img src="/static/img/instagram/5.jpg" alt=""></a>
-            </div>
-            <div class="col-2">
-                <a href=""><img src="/static/img/instagram/6.jpg" alt=""></a>
-            </div>
+             {%endfor%}
         </div>
+       
     </section>
 
     <!-- ================ Instargram Area End ================= -->  
@@ -137,7 +126,7 @@
                     <h4>About Us</h4>
                     <p>Heaven fruitful doesn't over lesser days appear creeping seasons so behold bearing days open</p>
                     <div class="footer-logo">
-                        <img src="/static/img/logo.png" alt="">
+                        <img src="{{site_info.logo.url}}" alt="">
                     </div>
                 </div>
 
@@ -146,8 +135,8 @@
                     <div class="footer-address">
                         <p>Address :Your address goes
                         here, your demo address.</p>
-                        <span>Phone : +8880 44338899</span>
-                        <span>Email : info@colorlib.com</span>
+                        <span>Phone : {{site_info.telephone}}</span>
+                        <span>Email : {{site_info.email}}</span>
                     </div>
                 </div>
 

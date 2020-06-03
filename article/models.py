@@ -12,7 +12,7 @@ class Categorie(models.Model):
 
     class Meta:
         verbose_name = 'Categorie'
-        verbose_name_plural = 'Categories'
+        verbose_name_plural = 'Categories' 
 
     def __str__(self):
         return self.nom
@@ -43,7 +43,7 @@ class Gallerie(models.Model):
         verbose_name_plural = 'Galleries'
 
     def __str__(self):
-        return self.photo.titre
+        return "photo"
 
 
 class Photo(models.Model):
